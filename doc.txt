@@ -1,0 +1,158 @@
+npm init -y
+
+package.json
+type : module  in package.json allows the eccmascript modules like import and exports
+
+npm i express nodemon
+
+in scripts 
+    start:node index.js
+    dev:nodemon index.js
+
+
+A file config.js for the port
+
+app.get('/') for the response
+
+mongodb account created
+database created, and connection string is copied and put in config.js
+password is replaced by user password and also coolection is added like books-collection
+
+npm i mongoose - to manage mongodb (mongoose is a library)
+
+connect mongoose with mongoDB with url
+
+put app.isten isnside try of mongoose, the express server will run only when database is connected successfully
+
+Now the database model is put in models folder and bookModel.js
+
+
+{
+  'title':'hey',
+  'author':'harry',
+  'publishYear':2019
+}
+
+first we implemented the app.post("/books") which on taking the details of books will create a new book
+
+on sending this text in json format, it produces 500 internal server error as described in index.js in catch block in app.post("/books);
+
+so for these we have to use a middleware express.json(),
+this will parse the incoming json requests into javascript objects
+
+now, app.get("/books") is implemented
+
+app.post helps in creating a new record
+while app.get is getting all the books
+
+app.get('/books/:id') helps to get one book where id of book is id. in url id is the parameters for request
+
+update a record
+we will use put method which is used to update the record found by id
+
+delete is used to delete a record
+
+all the middleware or http routes were moved to new folder routes 
+
+Now
+app.use("/books",bookRoutes) This will allso to use all the http methods with url starting with /books
+Now since /books is already defined we will remove /books from all the http methods in routes/booksRoute.js
+
+
+
+CORS policy
+
+Cross-Origin Resource Sharing is a security feature implemented by web browsers that restricts web pages
+from making requests to a different domain or origin than the one that served the web page.
+The server checks whether the request is permitted or not. It checks the origin methods header and then allows or deny the request to the server
+
+npm i cors 
+
+cors is installed and imported
+app.use(cors) to allow cors
+
+npm create vite@latest   to install vite
+project name frontend
+
+tailwind for vite
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p     with this command both postcss.config.js and tailwind.config.js is created
+
+content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+this in tailwind.config.js
+
+in src there is input.css remove all and add 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+In app.jsx,
+create a new rafce, 
+
+Now for SPA- Single Page Application
+
+npm i react-router-dom
+
+index.html in frontend is using main.jsx in script
+
+in main import {BrowserRouter} from 'react-router-dom'
+and put BrowserRouter in place of React.StrictMode
+
+in app.jsx import route and routes from react-router-dom
+
+Five components are created create show edit delete home
+
+and all are impoted in app.jsx
+
+Route is to specify how a particular route should be rendered
+and Routes is used to group a number of Route
+with the help of react-router-dom frontend ables to listen the route(url)
+
+npm i axios react-icons
+
+Axios is a popular JavaScript library for making HTTP requests in both web browsers and Node.js. It provides a 
+simple and consistent API for performing asynchronous operations with HTTP, such as sending GET, POST, PUT, 
+DELETE, and other types of HTTP requests.
+
+Pages are different pages which is for different operations
+
+Link is similar to <a> tag in html used in react
+
+Spinner is when loading of data is going on, and this is the buffering icon
+
+Components like Spinner, BackButton will be used in almost every page
+
+useParams is used for parameters passed with url
+
+Every page is created (create, show, delete, edit, upadate) i.e. crud operations done.
+
+Now to have ifferent UI, we can display data in home paga in tabular format 
+i.e. tables or with the help of cards
+
+For this two more components are created BooksTable and BooksCard
+
+The contents of table tag are put in BooksTable with parameter passed the data of book, 
+which has been generated in home page using axios and this is passed to BooksTable
+
+Fist BookCard is created and with the help of map() (same in BookTable) all the sets of data has been used
+
+Now BooCard use BookSingleCard component, here all the mapping part is put, and in BookCard in map 
+each object is passed to BookSingleCard and also a key is passed which is necessary. as react ask for keys
+
+BookModal another component used to give a summary of each book by a popping tab
+
+onClose -> this leads to closing of the tab which is opened
+
+event.stopPropagation() stops any event on the window i.e. clicking on that will not close the window
+(parent div has property onclick = {onClose} so to prevent this on the child div stopPrapagation(0 is used))
+
+Now this BookModal is imported in BookSingleCard 
+
+
+npm i notistack in frontend for better UI notifications or alert messages
+Here we have imported the SnackbarProvider and used it and also keep the <App> tag inside it.
+So we have to access to it in all our projects
