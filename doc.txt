@@ -168,6 +168,5 @@ hosting on vercel
 changes
 
 
-new file vercel.json
+new file vercel.json in backend
 
-in package.json in start
