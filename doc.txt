@@ -156,3 +156,18 @@ Now this BookModal is imported in BookSingleCard
 npm i notistack in frontend for better UI notifications or alert messages
 Here we have imported the SnackbarProvider and used it and also keep the <App> tag inside it.
 So we have to access to it in all our projects
+
+
+
+
+
+dec 18, 2023
+
+hosting on vercel
+
+changes
+
+
+new file vercel.json
+
+in package.json in start
