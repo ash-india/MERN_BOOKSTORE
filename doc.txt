@@ -184,3 +184,5 @@ switching cors() to custom cors() in index.js in backend
 
 
 added config.js to .gitignore
+
+https://mern-bookstore-frontend-lemon.vercel.app/
