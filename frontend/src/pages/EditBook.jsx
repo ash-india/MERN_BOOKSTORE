@@ -19,7 +19,7 @@ const EditBook = () => {
     setLoading(true);
     console.log(id);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`https://mern-bookstore-backend-nitesh-modis-projects.vercel.app/books/${id}`)
       .then((response)=> {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear);
@@ -42,7 +42,7 @@ const EditBook = () => {
 
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`,data)
+      .put(`https://mern-bookstore-backend-nitesh-modis-projects.vercel.app/books/${id}`,data)
       .then(()=>{
         setLoading(false);
         enqueueSnackbar('Book Edited Successfully', { variant : 'success' });

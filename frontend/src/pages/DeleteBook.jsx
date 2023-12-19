@@ -15,7 +15,7 @@ const DeleteBook = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5555/${id}`)
+      .delete(`https://mern-bookstore-backend-nitesh-modis-projects.vercel.app/books/${id}`)
       .then(()=>{
         setLoading(false);
         enqueueSnackbar('Deleted Successfully' , {variant : 'success'});

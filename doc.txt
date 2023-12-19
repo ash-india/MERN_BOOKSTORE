@@ -170,3 +170,17 @@ changes
 
 new file vercel.json in backend
 
+
+The next line is removed from package.json in backend
+"dev": "nodemon index.js"
+
+removed config.js from .gitignore
+
+in frontend
+
+changing localhost:5555 to mern-bookstore-backend-nitesh-modis-projects.vercel.app
+
+switching cors() to custom cors() in index.js in backend
+
+
+added config.js to .gitignore
